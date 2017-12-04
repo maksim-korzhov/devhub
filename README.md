@@ -6,4 +6,4 @@
 
 
 Демо
-<a target="_blank" href="https://maksim-korzhov.github.io/devhub/dist/index.html">DevHub</a>
+<a target="_blank" href="https://maksim-korzhov.github.io/devhub/dist/">DevHub</a>
