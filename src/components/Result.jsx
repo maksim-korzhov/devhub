@@ -5,7 +5,7 @@ class Result extends Component {
     render() {
         return (
             <div className="result">
-                Результат:
+                <strong>Результат:</strong>
                 {this.props.items.map( item => {
                     const value = new Helpers().round(item.Percent, 2);
                     return <div key={item.Name}>{item.Name}: {value}%</div>;
