@@ -1,6 +1,20 @@
 import React, { Component } from "react";
 
 class Slider extends Component {
+    _onChangeHandler(event) {
+        // Validate input
+        let value = parseFloat(event.target.value.replace(/,/, "."));
+
+        if( value >= 0 ) {
+            value = parseInt(parseFloat(value) * 100) / 100;
+            value = value.toFixed(2);
+
+            this.props.onChangeHandler(value);
+        }
+
+        return false;
+    }
+
     render() {
         return (
             <div className="slider">
@@ -11,7 +25,7 @@ class Slider extends Component {
                     max="100"
                     step="0.01"
                     value={this.props.percent}
-                    onChange={this.props.onChangeHandler}
+                    onChange={this._onChangeHandler.bind(this)}
                 />
                 <input
                     type="number"
@@ -19,7 +33,7 @@ class Slider extends Component {
                     max="100"
                     step="0.01"
                     value={this.props.percent}
-                    onChange={this.props.onChangeHandler}
+                    onChange={this._onChangeHandler.bind(this)}
                 />
             </div>
         );

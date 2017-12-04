@@ -13,11 +13,11 @@ class SliderList extends Component {
         };
     }
 
-    _onChangeHandler(index, event) {
+    _onChangeHandler(index, value) {
         // If there is only 1 slider - just set percent value from inputs
         if( this.state.items.length === 1 ) {
             const items = [...this.state.items];
-            items[index].Percent = event.target.value;
+            items[index].Percent = value;
 
             this.setState({
                 items
