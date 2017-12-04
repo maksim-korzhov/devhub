@@ -83,7 +83,7 @@ class SliderList extends Component {
 
     render() {
         return (
-            <div className="slider-list">
+            <div className={`slider-list ${this.props.isActive ? "active" : ""}`}>
                 {this.state.items.map( (item, i) =>
                     <Slider
                         key={i}
