@@ -5,7 +5,15 @@ class Tab extends Component {
     render() {
         return (
             <div className="tab">
-                <SliderList />
+                <SliderList sliders="1" />
+                <hr/>
+                <SliderList sliders="2" />
+                <hr/>
+                <SliderList sliders="3" />
+                <hr/>
+                <SliderList sliders="4" />
+                <hr/>
+                <SliderList sliders="5" />
             </div>
         );
     }

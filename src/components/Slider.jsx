@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helpers from "../helpers/Helpers";
 
 class Slider extends Component {
     _onChangeHandler(event) {
@@ -6,8 +7,7 @@ class Slider extends Component {
         let value = parseFloat(event.target.value.replace(/,/, "."));
 
         if( value >= 0 ) {
-            value = parseInt(parseFloat(value) * 100) / 100;
-            value = value.toFixed(2);
+            value = new Helpers().round(value, 2);
 
             this.props.onChangeHandler(value);
         }

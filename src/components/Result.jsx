@@ -1,13 +1,15 @@
 import React, { Component } from "react";
+import Helpers from "../helpers/Helpers";
 
 class Result extends Component {
     render() {
         return (
             <div className="result">
                 Результат:
-                {this.props.items.map( item => (
-                    <div key={item.Name}>{item.Name}: {item.Percent}</div>
-                ))}
+                {this.props.items.map( item => {
+                    const value = new Helpers().round(item.Percent, 2);
+                    return <div key={item.Name}>{item.Name}: {value}%</div>;
+                })}
             </div>
         );
     }
